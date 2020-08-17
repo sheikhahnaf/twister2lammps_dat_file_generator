@@ -25,6 +25,14 @@ zed.sort()
 print(zed)
 layer_num=list(range(len(z)))
 
+zlo=np.min(z)
+zhi=np.max(z)
+ylo=np.min(y)
+yhi=np.max(y)
+xlo=np.min(x)
+xhi=np.max(x)
+num_atom=len(z)
+
 def layer(z,zed,file,out):
     for x in range(len(z)):
         if z[x]==zed[0]:
@@ -43,6 +51,7 @@ def layer(z,zed,file,out):
     
     with open(file,"r") as f:
         lines=f.readlines()
+    
     count=0    
     for line in lines:
         atom_id=count+1
@@ -59,7 +68,16 @@ def layer(z,zed,file,out):
         
         count=count+1
         
-       
+with open(out,"w") as fo:
+             fo.writelines("\n")
+             fo.writelines("{} atoms\n".format(num_atom))
+             fo.writelines("{} atom types\n".format(len(zed)))
+             fo.writelines("{}  {} xlo xhi\n".format(xlo,xhi))
+             fo.writelines("{}  {} ylo yhi\n".format(ylo,yhi))
+             fo.writelines("{}  {} zlo zhi\n".format(zlo,zhi))
+             fo.writelines("\n")
+             fo.writelines("Atoms\n")
+             fo.writelines("\n")
 layer(z,zed,file,out)
         
         
