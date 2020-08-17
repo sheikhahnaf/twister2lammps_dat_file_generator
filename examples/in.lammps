@@ -6,7 +6,7 @@ neighbor        0.3 bin
 
 #2 structure
 boundary	p p p
-read_data	mos2_new.dat
+read_data lammps_superlattice.dat
 mass            1 32.066
 mass            2 95.94
 mass            3 32.066
