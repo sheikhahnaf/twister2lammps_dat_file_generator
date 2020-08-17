@@ -14,3 +14,6 @@ Transition Metal Dichalcogenides", Phys. Rev. Lett. 121, 266401 (2018)
 
 This python script facilitates converting output from TWISTER which generally provides co-ordinates for a definite twist angle of 2D bilayer structures to a file 
 readable by lammps for taking in the co-ordinates of atoms.
+
+
+NOTE: The twister generated file have to be manually stripped of lines other than the atom co-ordinates. 
